@@ -5,11 +5,11 @@
 @viewport { width: device-width; scale: 1; }
 
 html {
+  box-sizing: border-box;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  box-sizing: border-box;
   font: normal 100%/1.3 Ubuntu, sans-serif;
 }
 
@@ -18,40 +18,55 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #fff;
+  margin: 0;
 }
 
 header {
-  font-family: Ubuntu, sans-serif;
   background-color: #18294f;
-  overflow: hidden;
   color: #fff;
 }
 
 header h1 {
-  color: #fff;
-  font-weight: bold;
+  display: block;
   text-align: center;
-  margin-top: .1em;
-  margin-bottom: .5em;
+  align-items: center;
+  padding: .75rem 0;
+  padding-bottom: 1.5rem;
+  margin: 0;
+}
+
+nav {
+  display: block;
+  background-color: #18294f;
+  padding-bottom: 1rem;
+  padding-left: .35rem;
 }
 
 nav ul {
   font-size: 1.125rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #6c8fe0;
-  white-space: nowrap; /* How white space in the element is handled, text will not wrap to the next line using nowrap */
+  padding: 0;
+  margin: 0;
 }
 
 li {
+  font-size: 1.125rem;
+  padding-bottom: .5rem;
   list-style-type: none;
-  padding-bottom: 1.15em;
-  margin-left: -2em;
+}
+
+nav a {
+  display: flex;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #6c8fe0;
+  padding: 5px;
+  margin: 0;
+}
+
+nav a:hover {
+  background-color: #6c8fe0;
+  color: #fff;
 }
 
 @media only screen and (min-width: 25em) {
@@ -59,25 +74,21 @@ li {
   html {
     font-size: 100%;
     line-height: 1.3;
-    font-family: Ubuntu, sans-serif;
   }
 
-  header {
-    background-color: #18294f;
-    padding: 0;
+  header h1 {
+    padding-bottom: .5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   li {
-    margin-left: .5em;
-  }
-
-  li:nth-child(odd) {
-    float: left;
-  }
-
-  li:nth-child(even) {
-    margin-left: 11em;
-    text-align: center;
+    align-content: center;
+    width: 50%;
   }
 
 }
@@ -87,26 +98,15 @@ li {
   html {
     font-size: 110%;
     line-height: 1.4;
-    font-family: Ubuntu, sans-serif;
   }
 
-  header {
-    background-color: #18294f;
+  nav ul {
+    display: flex;
+    justify-content: center;
   }
 
-  h1 {
-    margin: 0;
-  }
-
-  li {
-    padding-right: 1.25em;
-    padding-bottom: .75em;
-    padding-top: .75em;
-  }
-
-  li:nth-child(even) {
-    float: left;
-    margin: 0;
+  nav li {
+    width: 25%;
   }
 
 }
@@ -116,23 +116,26 @@ li {
   html {
     font-size: 120%;
     line-height: 1.5;
-    font-family: Ubuntu, sans-serif;
   }
 
   header {
-    background-color: #18294f;
+    display: flex;
+    justify-content: space-between;
+    padding-left: .8rem;
   }
 
-  h1 {
-    float: left;
-    margin: .9rem;
+  nav {
+    width: 70%;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav li {
+    margin-top: 1rem;
     width: 25%;
-  }
-
-  li {
-    float: right;
-    padding-bottom: 0;
-    padding-top: 0;
   }
 
 }
@@ -141,24 +144,26 @@ li {
 
   html {
     font-size: 130%;
-    line-height: 1.5;
-    font-family: Ubuntu, sans-serif;
   }
 
   header {
-    background-color: #18294f;
+    display: flex;
+    justify-content: space-between;
+    padding-left: .8rem;
   }
 
-  h1 {
-    font-size: 2rem;
-    float: left;
-    width: 50%;
+  nav {
+    width: 70%;
   }
 
-}
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
 
-nav a:hover {
-  background-color: #6c8fe0;
-  color: #fff;
-  padding: .75rem;
+  nav li {
+    margin-top: 1rem;
+    width: 25%;
+  }
+
 }
